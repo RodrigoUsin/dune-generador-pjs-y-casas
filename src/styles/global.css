@@ -1,5 +1,100 @@
+:root {
+  --color-arena: #d1a370;
+  --color-spice: #9a4d32;
+  --color-fremen: #3a5f7a;
+  --color-texto: #000000;
+  --color-arenaoscuro: #7f4c3a;
+  --color-spiceoscuro: #5a2d24;
+  --color-sombra: rgba(10, 10, 10, 0.1);
+  /* Breakpoints */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  /* Tamaños */
+  --header-height: 120px;
+  --footer-height: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #d1a370; /* color arena */
-  color: #2c3e50;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-arena);
+  color: var(--color-texto);
+  border-top: 9px solid var(--color-spice);
+  border-bottom: 9px solid var(--color-spice);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: var(--footer-height);
+}
+
+h1,
+h2 {
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Botones/interactivos (mobile-friendly) */
+button,
+.btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--color-fremen);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+/* Efectos táctiles */
+button:active,
+.btn:active {
+  opacity: 0.8;
+}
+
+/* Mejora de scroll en móviles */
+html {
+  -webkit-overflow-scrolling: touch;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Media Queries (Escalado progresivo) */
+
+/* Tablet (≥768px) */
+@media screen and (min-width: var(--breakpoint-tablet)) {
+  .container {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Desktop (≥1024px) */
+@media screen and (min-width: var(--breakpoint-desktop)) {
+  .container {
+    max-width: 600px; /* Ancho fijo para legibilidad */
+    padding: 2rem;
+  }
+
+  body {
+    justify-content: center; /* Centrado vertical en grandes pantallas */
+  }
 }
