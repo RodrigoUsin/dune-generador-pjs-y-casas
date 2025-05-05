@@ -5,26 +5,25 @@ const Step4Specialties = ({
   setSpecialties,
   archetype,
   skillTranslations,
-  getSpecialtySuggestion,
-  onNext,
   onBack,
+  onNext,
 }) => {
   const mainSkill = archetype.mainSkill || "";
 
   return (
     <div className="step-container">
       <h2>Especialidades</h2>
-      <p>
-        Elige 4 especialidades (la primera será para tu habilidad principal).
-      </p>
+      <p>Elige 4 especialidades.</p>
 
-      {/* Especialidad principal */}
+      {/* Especialidad principal fija */}
       <div style={{ marginBottom: "1rem" }}>
         <label>
-          <strong>Especialidad en {skillTranslations[mainSkill]}:</strong>
+          <strong>
+            Especialidad en {skillTranslations[mainSkill] || mainSkill}:
+          </strong>
           <input
             type="text"
-            value={specialties[0]?.name || ""}
+            value={specialties[0].name}
             onChange={(e) => {
               const newSpecialties = [...specialties];
               newSpecialties[0] = {
@@ -33,7 +32,7 @@ const Step4Specialties = ({
               };
               setSpecialties(newSpecialties);
             }}
-            placeholder={`Ej: ${getSpecialtySuggestion(mainSkill)}`}
+            placeholder="Nombre de la especialidad"
           />
         </label>
       </div>
@@ -44,7 +43,7 @@ const Step4Specialties = ({
           <label>
             Especialidad {index + 1}:
             <select
-              value={specialties[index]?.skill || ""}
+              value={specialties[index].skill}
               onChange={(e) => {
                 const newSpecialties = [...specialties];
                 newSpecialties[index] = {
@@ -63,7 +62,7 @@ const Step4Specialties = ({
             </select>
             <input
               type="text"
-              value={specialties[index]?.name || ""}
+              value={specialties[index].name}
               onChange={(e) => {
                 const newSpecialties = [...specialties];
                 newSpecialties[index] = {
@@ -78,7 +77,7 @@ const Step4Specialties = ({
         </div>
       ))}
 
-      <button onClick={onBack}>← Volver a Habilidades</button>
+      <button onClick={onBack}>← Volver</button>
       <button onClick={onNext} style={{ marginLeft: "1rem" }}>
         Siguiente → Talentos
       </button>

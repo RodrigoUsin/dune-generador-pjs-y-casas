@@ -162,7 +162,6 @@ const CharacterPage = () => {
                 setSpecialties={setSpecialties}
                 archetype={archetype}
                 skillTranslations={skillTranslations}
-                //getSpecialtySuggestion={getSpecialtySuggestion}
                 onBack={() => setCurrentStep(3)}
                 onNext={() => setCurrentStep(5)}
               />
