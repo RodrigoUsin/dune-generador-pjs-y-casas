@@ -2,12 +2,22 @@
 /* Mobile First */
 /* Header y Banner */
 .header {
+  width: 100vw;
   position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   height: var(--header-height);
   overflow: hidden;
 }
 
+.border-top-line {
+  display: none; /* Oculto en móvil por defecto */
+}
+
 .banner {
+  position: relative;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../images/banner-desktop.png") no-repeat center center / cover;
@@ -21,6 +31,7 @@
   font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 /* Footer */
 .footer {
   position: fixed;
@@ -35,13 +46,13 @@
   justify-content: center;
   font-size: 1rem;
 }
+
 /* Toggle móvil */
 .menu-toggle {
   display: block; /* Visible solo en móvil/tablet */
   position: fixed;
   top: 1rem;
   right: 1rem;
-  left: 1rem;
   z-index: 1000;
   background: var(--color-spice);
   border: none;
@@ -51,7 +62,6 @@
   cursor: pointer;
   border-radius: 4px;
   transition: transform 0.3s;
-  display: flex;
 }
 
 .menu-toggle.active {
@@ -107,6 +117,36 @@
   }
 }
 
+/* Tablet (≥768px) */
+@media screen and (min-width: 769px) {
+  .border-top-line {
+    display: block;
+    position: fixed; /* Cambiado de absolute a fixed para que cubra desde el top */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 9px; /* Altura del borde superior */
+    background-color: var(--color-spice);
+    z-index: 1001; /* Por encima de casi todo */
+  }
+
+  .header {
+    margin-top: 9px; /* Compensa el borde superior */
+  }
+
+  /* Ajuste para el menú toggle para que no se solape */
+  .menu-toggle {
+    top: calc(9px + 1rem); /* 9px del borde + 1rem de espacio */
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .nav {
+    width: 60%;
+  }
+}
+
 /* Desktop (≥1024px) - Menú siempre visible */
 @media screen and (min-width: 1024px) {
   .menu-toggle {
@@ -130,11 +170,9 @@
   .main {
     margin-left: 0 !important;
   }
-}
 
-/* Tablet (768px - 1023px) */
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .nav {
-    width: 60%;
+  /* Ajuste específico para desktop */
+  .border-top-line {
+    height: 3rem; /* Mantenemos igual que en tablet */
   }
 }

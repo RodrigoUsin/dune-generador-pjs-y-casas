@@ -1,0 +1,73 @@
+/* 404.css */
+.not-found-page {
+  color: white;
+  padding: 96px;
+  font-family: "-apple-system, Roboto, sans-serif, serif";
+  font-weight: 300;
+  font-size: 18px;
+  min-height: calc(100vh - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-bottom: var(--footer-height);
+}
+
+.not-found-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../../images/Gusano\ de\ arena\ en\ el\ desierto.png") no-repeat center
+      center / cover;
+  z-index: -1;
+}
+
+.not-found-heading {
+  margin-top: 0;
+  margin-bottom: 2rem;
+
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  font-size: 3rem;
+}
+
+.not-found-paragraph {
+  margin-bottom: 48px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  font-size: 1.5rem;
+}
+
+.house-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  gap: 0.5rem;
+  padding: 0;
+  background-color: var(--color-spice);
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border: 1px solid var(--color-arena);
+  margin: auto;
+}
+
+.house-link:hover {
+  background-color: var(--color-arenaoscuro);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.house-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  display: flex;
+}

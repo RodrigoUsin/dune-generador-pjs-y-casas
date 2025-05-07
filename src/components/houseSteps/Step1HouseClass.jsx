@@ -26,7 +26,7 @@ const Step1HouseClass = ({ houseClass, setHouseClass, onNext }) => {
         Tipo:
         <select
           value={houseClass.type || ""}
-          onChange={(e) => handleInputChange("name", e.target.value)}
+          onChange={(e) => handleInputChange("type", e.target.value)}
         >
           <option value="">Selecciona un tipo</option>
           {houseClassOptions.map((option) => (

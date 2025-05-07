@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-//import DarkModeToggle from "../components/DarkModeToggle";
+import DarkModeToggle from "../components/DarkModeToggle";
 import "../styles/global.css";
 import "../styles/components/layout.css";
 
@@ -9,7 +9,10 @@ const Layout = ({ title, children }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <>
-      {/*<DarkModeToggle />*/}
+      <div className="border-top-line">
+        <DarkModeToggle />
+      </div>
+
       <header className="header">
         <div className="banner">
           <h1 className="banner-text">
