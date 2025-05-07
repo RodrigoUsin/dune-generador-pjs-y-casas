@@ -52,7 +52,7 @@ button,
 .btn {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
-  background-color: var(--color-fremen);
+  background-color: var(--color-spiceoscuro);
   color: white;
   border: none;
   border-radius: 4px;
@@ -79,7 +79,7 @@ html {
 @media screen and (min-width: var(--breakpoint-tablet)) {
   .container {
     max-width: 95%;
-    padding: 1.5rem;
+    padding: 0.5rem;
   }
 
   h1 {
@@ -91,7 +91,7 @@ html {
 @media screen and (min-width: var(--breakpoint-desktop)) {
   .container {
     max-width: 600px; /* Ancho fijo para legibilidad */
-    padding: 2rem;
+    padding: 0.5rem;
   }
 
   body {

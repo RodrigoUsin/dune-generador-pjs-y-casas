@@ -4,7 +4,7 @@ import "../styles/global.css";
 
 const IndexPage = () => {
   return (
-    <Layout title="Mentat asistente.">
+    <Layout title="Asistente Mentat .">
       <main>
         <h1>Inicio.</h1>
         <p>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+//import DarkModeToggle from "../components/DarkModeToggle";
 import "../styles/global.css";
 import "../styles/components/layout.css";
 
@@ -8,10 +9,14 @@ const Layout = ({ title, children }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <>
+      {/*<DarkModeToggle />*/}
       <header className="header">
         <div className="banner">
-          <h1 className="banner-text">Mentat Dune RPG </h1>
+          <h1 className="banner-text">
+            Asistente para personajes y casas: Dune RPG{" "}
+          </h1>
         </div>
+
         <StaticImage
           src="../../images/banner-desktop.png"
           alt="Banner Dune"
@@ -37,6 +42,7 @@ const Layout = ({ title, children }) => {
         >
           {isMenuOpen ? "✕" : "☰"}
         </button>
+
         <nav className={`nav ${isMenuOpen ? "active" : ""}`}>
           <ul style={{ listStyle: "none", padding: 0 }}>
             <li>
@@ -56,8 +62,19 @@ const Layout = ({ title, children }) => {
               </Link>
             </li>
             <li>
+              <Link
+                to="/houses"
+                onClick={() => setIsMenuOpen(false)}
+                className="nav-link"
+                activeClassName="active"
+                partiallyActive={true}
+              >
+                Creador de Casas
+              </Link>
+            </li>
+            <li>
               <Link to="/about" onClick={() => setIsMenuOpen(false)}>
-                Sobre el Mentat asistente
+                Sobre este asistente
               </Link>
             </li>
           </ul>

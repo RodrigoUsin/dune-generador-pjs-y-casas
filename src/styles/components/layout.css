@@ -28,7 +28,7 @@
   left: 0;
   width: 100%;
   height: var(--footer-height);
-  background-color: var(--color-spiceoscuro);
+  background-color: var(--color-spice);
   color: white;
   display: flex;
   align-items: center;
