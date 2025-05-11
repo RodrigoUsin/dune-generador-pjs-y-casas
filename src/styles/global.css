@@ -1,17 +1,19 @@
+/*Global.css*/
+
 :root {
   --color-arena: #d1a370;
-  --color-spice: #9a4d32;
+  --color-especia: #9a4d32;
   --color-fremen: #3a5f7a;
   --color-texto: #000000;
   --color-arenaoscuro: #7f4c3a;
-  --color-spiceoscuro: #5a2d24;
+  --color-especiaoscuro: #5a2d24;
   --color-sombra: rgba(10, 10, 10, 0.1);
-  /* Breakpoints */
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
   /* Tamaños */
   --header-height: 120px;
   --footer-height: 60px;
+  /* Breakpoints */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
 }
 
 * {
@@ -20,57 +22,59 @@
   box-sizing: border-box;
 }
 
-body {
+/* Mejora de scroll en móviles */
+html {
+  -webkit-overflow-scrolling: touch;
   font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Arial", sans-serif;
   background-color: var(--color-arena);
   color: var(--color-texto);
-  border-top: 9px solid var(--color-spice);
-  border-bottom: 9px solid var(--color-spice);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   padding: 1rem;
-  max-width: 600px;
   margin: 0 auto;
+  max-width: 600px;
+  position: relative;
   padding-bottom: var(--footer-height);
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "Helvetica Neue", sans-serif;
   text-align: center;
   margin-bottom: 1rem;
+  color: var(--color-spiceoscuro);
 }
 
 p {
   margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 /* Botones/interactivos (mobile-friendly) */
 button,
 .btn {
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   background-color: var(--color-arenaoscuro);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: all 0.3s ease;
 }
 
 /* Efectos táctiles */
 button:active,
 .btn:active {
   opacity: 0.8;
-}
-
-/* Mejora de scroll en móviles */
-html {
-  -webkit-overflow-scrolling: touch;
-  font-family: Arial, sans-serif;
-  scroll-behavior: smooth;
 }
 
 /* Media Queries (Escalado progresivo) */

@@ -23,7 +23,7 @@ const Step3Skills = ({
         [archetype.secondarySkill]: 5,
       }));
     }
-  }, [archetype.mainSkill, archetype.secondarySkill]);
+  }, [archetype.mainSkill, archetype.secondarySkill, skills, setSkills]);
 
   const spentPoints =
     Object.entries(skills).reduce((acc, [skill, value]) => {

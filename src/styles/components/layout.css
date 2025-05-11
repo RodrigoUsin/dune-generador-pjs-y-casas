@@ -39,7 +39,7 @@
   left: 0;
   width: 100%;
   height: var(--footer-height);
-  background-color: var(--color-spice);
+  background-color: var(--color-especia);
   color: white;
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@
   top: 1rem;
   right: 1rem;
   z-index: 1000;
-  background: var(--color-spice);
+  background: var(--color-especia);
   border: none;
   color: white;
   font-size: 1.5rem;
@@ -73,9 +73,9 @@
   top: 0;
   left: -100%;
   width: 80%;
-  max-width: 300px;
+  max-width: 90%;
   height: 100vh;
-  background: var(--color-spice);
+  background: var(--color-especia);
   transition: left 0.3s ease;
   z-index: 999;
   padding-top: calc(var(--header-height) + 2rem);
@@ -126,7 +126,7 @@
     left: 0;
     width: 100vw;
     height: 9px; /* Altura del borde superior */
-    background-color: var(--color-spice);
+    background-color: var(--color-especia);
     z-index: 1001; /* Por encima de casi todo */
   }
 

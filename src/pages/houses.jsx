@@ -6,13 +6,6 @@ import Step3HomeWorld from "../components/houseSteps/Step3HomeWolrd";
 
 const HousesPage = () => {
   const [currentStep, setCurrentStep] = React.useState(1);
-  const [selectedHouse, setSelectedHouse] = React.useState(null);
-  const [selectedHouseClass, setSelectedHouseClass] = React.useState(null);
-  const [initialDomains, setInitialDomains] = React.useState({});
-  const [homeWorld, setHomeWorld] = React.useState({});
-  const [selectedHouseTrait, setSelectedHouseTrait] = React.useState(null);
-  const [selectedHouseRole, setSelectedHouseRole] = React.useState(null);
-  const [selectedHouseEnemy, setSelectedHouseEnemy] = React.useState(null);
   const [houseClass, setHouseClass] = React.useState({
     name: "",
     description: "",
@@ -25,6 +18,9 @@ const HousesPage = () => {
     roles: [],
     enemies: [],
   });
+
+  const [initialDomains, setInitialDomains] = React.useState({});
+  const [homeWorld, setHomeWorld] = React.useState({});
 
   const steps = [
     "1. Tipo de Casa",
